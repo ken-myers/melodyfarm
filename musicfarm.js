@@ -38,7 +38,7 @@ function startLoad(){
 }
 
 function setSources(){
-	fetch(apiAddress+"requestPair", { method: 'GET', mode: 'cors' }).then(function(response){
+	fetch(apiAddress+"requestPair/", { method: 'GET', mode: 'cors' }).then(function(response){
 		if(response.status !== 200){
 			console.log("Error, status code: "+response.status+". Trying again...");
 			setTimeout(setSources,2000);
