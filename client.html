@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>melody.farm</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preload" href="img/song1-pushed.svg" as="image">
+	<link rel="preload" href="img/song2-pushed.svg" as="image">
+	<link rel="preload" href="img/play-pushed.svg" as="image">
+	<link rel="preload" href="img/vote-pushed.svg" as="image">
+	<link rel="preload" href="img/song1.svg" as="image">
+	<link rel="preload" href="img/song2.svg" as="image">
+	<link rel="preload" href="img/play.svg" as="image">
+	<link rel="preload" href="img/vote.svg" as="image">
+	<link rel="preload" href="img/song1-grey.svg" as="image">
+	<link rel="preload" href="img/song2-grey.svg" as="image">
+	<link rel="preload" href="img/play-grey.svg" as="image">
+	<link rel="preload" href="img/vote-grey.svg" as="image">
+	<link rel="preload" href="img/boombox.gif" as="image">
+
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script>
+		hue = Math.floor(Math.random() * 360);
+		document.write("<style>body{background-color:hsl("+hue+", 12%, 51%);}</style>");
+	</script>
+</head>
+<body>
+	<form id = "winnerForm">
+		<div id = "topRow">
+			<div class = "buttonWrapper">
+			<div class = "buttonHub">
+				<button type = "button" id = "button1" class = "playButton" disabled><img></button>
+		  		<label for="radio1" disabled><input type="radio" id="radio1" name="pickWinner" value=1 disabled><img></label>
+		  	</div>
+		    </div>
+		  	<div id = "boomDiv">
+		  		<div class="loader">Loading...</div>
+				<img src = "img/boombox1.png" id = "boombox" class = "pixelArt hidden">
+				<midi-player style = "display:none" id = "player1" sound-font ="https://storage.googleapis.com/magentadata/js/soundfonts/salamander"></midi-player>
+				<midi-player style = "display:none" id = "player2" sound-font ="https://storage.googleapis.com/magentadata/js/soundfonts/salamander"></midi-player>
+			</div>
+			<div class = "buttonWrapper">
+		  	<div class = "buttonHub">
+		  		<button type = "button" id = "button2" class = "playButton" disabled><img></button>
+		 		<label for="radio2" disabled><input type="radio" id="radio2" name="pickWinner" value=2 disabled><img></label>
+		 	</div>
+		 </div>
+		</div>
+	 	<div id = "submitDiv">
+	 		<button id = "voteButton" type = "button" disabled><img></button>
+	 	</div>
+	</form>
+	<script src="https://cdn.jsdelivr.net/combine/npm/tone@14.7.58,npm/@magenta/music@1.21.0/es6/core.js,npm/focus-visible@5,npm/html-midi-player@1.1.0"></script>
+	<script src = "musicfarm.js"></script>
+</body>
+</html>
