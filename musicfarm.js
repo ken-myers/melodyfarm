@@ -38,7 +38,7 @@ function startLoad(){
 }
 
 function setSources(){
-	fetch(apiAddress+"requestPair").then(function(response){
+	fetch(apiAddress+"requestPair", { method: 'GET', mode: 'cors' }).then(function(response){
 		if(response.status !== 200){
 			console.log("Error, status code: "+response.status+". Trying again...");
 			setTimeout(setSources,2000);
@@ -65,6 +65,7 @@ function pickWinner(winner){
 	data = {"winner" : winner};
 	fetch(apiAddress+"selectWinner/"+currentID,{
 		method: 'POST',
+		mode: 'cors',
 		headers: {
 	      'Accept': 'application/json',
 	      'Content-Type': 'application/json'
