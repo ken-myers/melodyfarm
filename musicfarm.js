@@ -1,4 +1,4 @@
-const apiAddress = "https://melodyfarm47.loca.lt/api/"
+const apiAddress = "https://melodyfarm.herokuapp.com/api/"
 
 
 currentID = null;
@@ -41,7 +41,7 @@ function setSources(){
 	fetch(apiAddress+"requestPair/", { method: 'GET', mode: 'cors' }).then(function(response){
 		if(response.status !== 200){
 			console.log("Error, status code: "+response.status+". Trying again...");
-			setTimeout(setSources,2000);
+			setTimeout(setSources,6000);
 			return;
 		}
 		response.json().then(function(data){
@@ -56,7 +56,7 @@ function setSources(){
 		});
 	}).catch(function(error){
 		console.log("Error fetching: "+error+". Trying again...");
-		setTimeout(setSources,2000);
+		setTimeout(setSources,6000);
 	});
 }
 
