@@ -9,30 +9,23 @@ p2 = document.querySelector("#player2");
 
 // maybe add checks for all these
 function lockBoxes(){
-	console.log("locking")
 	$("button").prop("disabled", true);
 	$("label").prop("disabled", true);
 	$("input").prop("disabled", true);
 }
 
 function unlockBoxes(){
-	console.log("unlocking")
-
 	$("button").not("#voteButton").prop("disabled", false);
 	$("label").prop("disabled", false);
 	$("input").prop("disabled", false);
 }
 
 function endLoad(){
-	console.log("ending load")
-
 	$(".loader").addClass('hidden');
 	$("#boombox").removeClass('hidden');
 }
 
 function startLoad(){
-	console.log("strting load")
-
 	$("#boombox").addClass('hidden');
 	$("#loader").removeClass('hidden');
 }
@@ -62,6 +55,7 @@ function setSources(){
 
 function pickWinner(winner){
 	lockBoxes();
+	startLoad();
 	data = {"winner" : winner};
 	fetch(apiAddress+"selectWinner/"+currentID,{
 		method: 'POST',
@@ -73,7 +67,6 @@ function pickWinner(winner){
 		body: JSON.stringify(data)
 	}).then(setSources).catch(function(error){
 		console.log("Error fetching: "+error+".");
-		startLoad();
 		setSources();
 	});
 }
