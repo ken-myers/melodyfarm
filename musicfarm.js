@@ -1,4 +1,4 @@
-const apiAddress = "melodyfarm.herokuapp.com"
+const apiAddress = "https://melodyfarm.herokuapp.com/api/"
 
 
 currentIDs = [null, null, null]
