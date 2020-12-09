@@ -1,7 +1,7 @@
-const apiAddress = "https://melodyfarm.herokuapp.com/api/"
+const apiAddress = "melodyfarm.herokuapp.com"
 
 
-currentID = null;
+currentIDs = [null, null, null]
 
 // why cant i do this w jquery? i dont know.
 p1 = document.querySelector("#player1");
@@ -27,7 +27,7 @@ function endLoad(){
 
 function startLoad(){
 	$("#boombox").addClass('hidden');
-	$("#loader").removeClass('hidden');
+	$(".loader").removeClass('hidden');
 }
 
 function setSources(){
@@ -39,7 +39,7 @@ function setSources(){
 		}
 		response.json().then(function(data){
 			stem = "data:;base64,";
-			currentID = data.id;
+			currentIDs = [data.pairid, data.id1, data.id2];
 			song1 = data.song1;
 			song2 = data.song2;
 			$("#player1").attr("src",stem+song1);
@@ -53,11 +53,11 @@ function setSources(){
 	});
 }
 
-function pickWinner(winner){
+function voteOff(loser){
 	lockBoxes();
 	startLoad();
-	data = {"winner" : winner};
-	fetch(apiAddress+"selectWinner/"+currentID,{
+	data = {"loser" : loser};
+	fetch(apiAddress+"voteOff/"+currentIDs[0],{
 		method: 'POST',
 		mode: 'cors',
 		headers: {
@@ -114,10 +114,10 @@ $("[type=radio]").change(function(){
 $("#voteButton").click(function(event){
 	radio = $('input[name="pickWinner"]:checked', "#winnerForm").val();
 	if (radio == 1){
-		pickWinner(true);
+		voteOff(currentIDs[2])
 	}
 	else if (radio == 2){
-		pickWinner(false);
+		voteOff(currentIDs[1])
 	}
 	$('input[name="pickWinner"]:checked').prop('checked',false);
 });

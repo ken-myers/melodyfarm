@@ -276,7 +276,7 @@ label>img {
   }
 }
 
-@media (min-width: 57.5em) {
+@media (min-width: 915px) {
   #topRow {
     flex-wrap: nowrap;
   }
@@ -360,7 +360,7 @@ label>img {
   }
 }
 
-@media (min-width: 81.25em) {
+@media (min-width: 1300px) {
   .buttonHub {
     width: 18.28em;
   }
