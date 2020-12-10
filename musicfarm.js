@@ -1,6 +1,5 @@
 const apiAddress = "https://melodyfarm.herokuapp.com/api/"
 
-
 currentIDs = [null, null, null]
 
 // why cant i do this w jquery? i dont know.
@@ -72,6 +71,10 @@ function voteOff(loser){
 }
 
 function init(){
+	setTimeout(function(){
+		// Hide the address bar!
+		window.scrollTo(0, 1);
+	}, 0);
 	setSources();
 }
 

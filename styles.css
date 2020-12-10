@@ -49,6 +49,7 @@ button:focus {
 }
 
 #winnerForm {
+  max-height: 100%;
   display: inline-flex;
   flex-wrap: wrap;
   align-items: center;
@@ -59,12 +60,13 @@ button:focus {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 
 #winnerForm>div,
 #topRow>div {
   display: inline-flex;
-  padding-top: 1.8em;
 }
 
 #topRow {
@@ -92,13 +94,16 @@ button:focus {
 #boomDiv {
   width:90%;
   max-width: 22.5em;
-  margin-top: 1em;
+  margin-top: 1.2em;
+  padding-top:1.8em;
+  padding-bottom:1.8em;
   transform: translate(0, -5%);
 }
 
 #submitDiv {
   display: inline-flex;
   margin-top: 1em;
+  padding-top: 1.8em;
   width: 100%;
   justify-content: center;
 }
@@ -119,7 +124,7 @@ label>img {
 
 #voteButton {
   max-width: 16.25em;
-  width: 40%;
+  width: 50%;
 }
 
 [type=radio],
@@ -292,6 +297,8 @@ label>img {
   }
   #boomDiv {
     width: 25em;
+    padding-top: 0em;
+    padding-bottom: 0em;
     margin-top: 0em;
   }
   #voteButton {
