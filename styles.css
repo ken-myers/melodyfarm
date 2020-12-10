@@ -82,15 +82,17 @@ button:focus {
 }
 
 .buttonHub {
-  width: 22.5em;
+  width: 90%;
+  max-width: 22.5em;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
 #boomDiv {
-  width: 22.5em;
-  margin-top: 1.4em;
+  width:90%;
+  max-width: 22.5em;
+  margin-top: 1em;
   transform: translate(0, -5%);
 }
 
@@ -116,7 +118,8 @@ label>img {
 }
 
 #voteButton {
-  width: 16.25em;
+  max-width: 16.25em;
+  width: 40%;
 }
 
 [type=radio],
@@ -220,6 +223,7 @@ label>img {
   transform: translateZ(0);
 }
 
+/*big*/
 @-webkit-keyframes load4 {
   0%,
   100% {
