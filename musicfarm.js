@@ -1,4 +1,4 @@
-const apiAddress = "https://melodyfarm.herokuapp.com/api/"
+const apiAddress = "https://api.kenmyers.io/melodyfarm/"
 
 currentIDs = [null, null, null]
 
